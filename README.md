@@ -1,73 +1,24 @@
-# Turborepo starter
+# Apte
 
-This is an official Yarn v1 starter turborepo.
+This project is currently in its beginning stages of development.
 
-## What's inside?
+**Apte** will be a framework for both the frontend and backend that will aim to not only make server-side events easy to implement, but also solve a lot of the problems that are currently present with server-side events (such as the uni-directional nature of SSE).
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
+## Concepts to understand
 
-### Apps and Packages
+1. **Namespaces** in the context of Apte will be named locations where events can both be streamed, as well as sent and handled.
+2. A namespace can have an unlimited number of **Type**s. Types are just string values that are attached to an event to help discern it from other events sent in the namespace.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+## Goals
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- **Out-of-the-box Redis support** - A certain level of statefulness is required the more complex your use-case of SSE becomes. State can be stored in memory, but that gets messy quickly. Instead, Redis is a much more fantastic option for storing temporary data related to clients, or subscribing to events sent from the client to the server in a certain namespace.
+- **Multi-language/framework support** - Initially, the main focus will be to develop, test, and release two backend Apte implementations (Golang + Node w/ TypeScript) along with a Vanilla TS frontend library and a React adaptation.
+- **Fantastic type support** - As with [Nanolith](https://github.com/mstephen19/nanolith), the goal with Apte is to have seamless TypeScript support.
+- **Intuitiveness** - Apte must be simple to use with as little new concepts to learn as possible. The learning curve should not be steep, and writing code with Apte should feel natural with as little boilerplate as possible.
 
-### Utilities
+## Plan of action
 
-This turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+1. Golang library
+2. Vanilla TS library
+3. Node.js library
+4. React library
