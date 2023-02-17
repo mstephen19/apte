@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Node",
+    "extends": "./base.json",
+    "compilerOptions": {
+        "declaration": true,
+        "declarationMap": false,
+        "sourceMap": false,
+        "module": "ESNext",
+        "moduleResolution": "NodeNext",
+        "target": "ESNext",
+        "removeComments": false,
+        "pretty": false,
+        "allowSyntheticDefaultImports": true
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "React",
+    "extends": "./base.json",
+    "compilerOptions": {
+        "composite": false,
+        "declaration": true,
+        "declarationMap": true,
+        "esModuleInterop": true,
+        "inlineSources": false,
+        "isolatedModules": true,
+        "moduleResolution": "node",
+        "preserveWatchOutput": true,
+        "jsx": "react-jsx",
+        "lib": ["ES2015", "DOM", "DOM.Iterable"],
+        "module": "ESNext",
+        "target": "ES6"
+    }
+}
