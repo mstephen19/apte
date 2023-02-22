@@ -1,7 +1,15 @@
 {
     "name": "apte-client",
     "version": "0.0.1",
-    "main": "./???",
+    "main": "./build/index.js",
     "type": "module",
-    "license": "MIT"
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "eslint": "^8.34.0",
+        "eslint-config-custom": "*",
+        "tsconfig": "*"
+    }
 }

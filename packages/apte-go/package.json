@@ -1,3 +1,7 @@
 {
-    "scripts": {}
+    "private": true,
+    "scripts": {
+        "dev": "go run playground/main.go"
+    },
+    "license": "N/A"
 }

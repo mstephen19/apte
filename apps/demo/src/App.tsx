@@ -1,11 +1,19 @@
 import { useEffect } from 'react';
+import { ApteClient } from 'apte-client';
+
+const client = new ApteClient({ url: 'http://localhost:3000/events' });
 
 function App() {
     useEffect(() => {
-        const source = new EventSource('http://localhost:3000/events?namespace=messages');
+        const namespace = client.namespace('messages');
+
+        namespace.receive('message', (data) => {
+            console.log(data);
+            namespace.dispatch('message', JSON.stringify({ foo: 'bar' }));
+        });
 
         return () => {
-            source.close();
+            namespace.cleanup();
         };
     });
 

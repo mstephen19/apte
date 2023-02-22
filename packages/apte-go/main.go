@@ -9,9 +9,11 @@ import (
 	"golang.org/x/net/http2"
 )
 
-var DefaultStartConfig = &StartConfig{
-	Addr: ":3000",
-	Cors: cors.Options{},
+func DefaultStartConfig() *StartConfig {
+	return &StartConfig{
+		Addr: ":3000",
+		Cors: cors.Options{},
+	}
 }
 
 // Options for creating an event server with NewEventServer().

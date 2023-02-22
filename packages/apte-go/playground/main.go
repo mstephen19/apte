@@ -32,5 +32,6 @@ func main() {
 		fmt.Println(data)
 	})
 
-	server.Start(apte.DefaultStartConfig)
+	fmt.Println("Server starting...")
+	server.Start(apte.DefaultStartConfig())
 }
