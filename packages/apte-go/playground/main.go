@@ -19,14 +19,14 @@ func main() {
 
 		stream := ctx.Continuous(func() bool {
 			<-ticker.C
-			ctx.Dispatch("message", []byte("hello world"))
+			ctx.Dispatch("msg", []byte("hello world"))
 			return true
 		})
 
 		<-stream
 	})
 
-	messages.Receive("message", func(ctx *lib.ReceiveHandlerContext) {
+	messages.Receive("msg", func(ctx *lib.ReceiveHandlerContext) {
 		data := &map[string]any{}
 		ctx.GetJSONData(data)
 		fmt.Println(data)

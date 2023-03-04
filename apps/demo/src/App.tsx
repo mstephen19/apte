@@ -1,25 +1,16 @@
-import { useEffect } from 'react';
-import { ApteClient } from 'apte-client';
-
-const client = new ApteClient({ url: 'http://localhost:3000/events' });
+import { useStream } from './hooks';
 
 function App() {
-    useEffect(() => {
-        const namespace = client.namespace('messages');
-
-        namespace.receive('message', (data) => {
+    const error = useStream('x', {
+        msg: (data) => {
             console.log(data);
-            namespace.dispatch('message', JSON.stringify({ foo: 'bar' }));
-        });
-
-        return () => {
-            namespace.cleanup();
-        };
+        },
     });
 
     return (
         <main>
             <h1>Hello Apte</h1>
+            <p>{error && error.message}</p>
         </main>
     );
 }
